@@ -16,7 +16,6 @@ body {
   position: relative;
   max-width: 960px;
   width: 100%;
-  height: 1000px;
   padding: 0 20px;
   border: 1px solid black;
   background-color: yellow;
@@ -28,14 +27,6 @@ body {
     height: 200px;
     border: 1px solid black;
     background-color: blue;
-  }
-
-  .contents {
-    @include span-columns(12);
-    max-width: 960px;
-    width: 100%;
-    height: 50px;
-    background-color: yellow;
   }
 
   .main_body {
@@ -53,6 +44,40 @@ body {
       width: 78%;
       height: 600px;
       background-color: green;
+
+      .tabs {
+        @include span-columns(12);
+        max-width: 960px;
+        width: 100%;
+        height: 32px;
+        border: 1px solid black;
+        background-color: yellow;
+
+        .tab_header {
+          padding-left: 0px;
+          margin: 0 auto;
+
+          li {
+            display: inline-block;
+            float: left;
+            list-style: none;
+            width: 25%;
+            height: 30px;
+            border: 1px solid black;
+            text-align: center;
+
+            &:hover {
+              background-color: HSLA(207, 10%, 95%, 1);
+              transition: background-color 0.5s ease;
+
+              .open {
+                background-color: HSLA(207, 10%, 95%, 1);
+                transition: background-color 0.5s ease;
+              }
+            }
+          }
+        }
+      }
     }
 
     .sidebar {
@@ -73,4 +98,5 @@ body {
     border: 1px solid black;
     background-color: yellow;
   }
+}
 }
